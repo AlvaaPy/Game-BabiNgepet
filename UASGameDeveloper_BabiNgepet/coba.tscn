@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://fa5hsolshb7g"]
+
+[ext_resource type="Script" path="res://coba.gd" id="1_6clyc"]
+[ext_resource type="Texture2D" uid="uid://cpnjn8hxi1sij" path="res://assets/WIDI-removebg-preview.png" id="1_vu1m2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b38en"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vu1m2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iod1l"]
+size = Vector2(17, 7)
+
+[node name="coba" type="CharacterBody2D"]
+script = ExtResource("1_6clyc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(661, 342)
+scale = Vector2(0.176622, 0.182972)
+sprite_frames = SubResource("SpriteFrames_b38en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(664, 359)
+shape = SubResource("RectangleShape2D_iod1l")

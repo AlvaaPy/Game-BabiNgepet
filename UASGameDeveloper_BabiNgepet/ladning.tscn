@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://17q88vjj831x"]
+
+[ext_resource type="Texture2D" uid="uid://cl1wyu636qjf0" path="res://assets/MENU GAME.jpg" id="1_avv3u"]
+[ext_resource type="Script" path="res://ladning.gd" id="1_q1tdj"]
+[ext_resource type="AudioStream" uid="uid://dp1ou4g5b1e1h" path="res://assets/SoundMain.mp3" id="2_tjbrn"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_q1tdj")
+
+[node name="New Game" type="Button" parent="."]
+offset_left = 102.0
+offset_top = 250.0
+offset_right = 728.0
+offset_bottom = 339.0
+
+[node name="Continuous Game" type="Button" parent="."]
+offset_left = 102.0
+offset_top = 366.0
+offset_right = 723.0
+offset_bottom = 447.0
+
+[node name="Credits" type="Button" parent="."]
+offset_left = 100.0
+offset_top = 477.0
+offset_right = 724.0
+offset_bottom = 564.0
+
+[node name="Pengaturan" type="Button" parent="."]
+offset_left = 737.0
+offset_top = 508.0
+offset_right = 790.0
+offset_bottom = 567.0
+
+[node name="Exite" type="Button" parent="."]
+offset_left = 934.0
+offset_top = 552.0
+offset_right = 1074.0
+offset_bottom = 588.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+scale = Vector2(0.614583, 0.681481)
+texture = ExtResource("1_avv3u")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tjbrn")
+volume_db = -23.807
+autoplay = true
+
+[connection signal="button_up" from="New Game" to="." method="_on_new_game_button_up"]
+[connection signal="button_up" from="Continuous Game" to="." method="_on_continuous_game_button_up"]
+[connection signal="button_up" from="Credits" to="." method="_on_credits_button_up"]
+[connection signal="button_up" from="Pengaturan" to="." method="_on_pengaturan_button_up"]
+[connection signal="pressed" from="Exite" to="." method="_on_exite_pressed"]

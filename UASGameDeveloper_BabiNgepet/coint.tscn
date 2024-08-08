@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://c60rlod7bstjf"]
+
+[ext_resource type="Script" path="res://coint.gd" id="1_dljhw"]
+[ext_resource type="Texture2D" uid="uid://cmheqxncfysjb" path="res://assets/Coin-1.png.png" id="2_wh8iw"]
+[ext_resource type="Texture2D" uid="uid://b4mhxbb6t8ekr" path="res://assets/Coin-2.png.png" id="3_ujy84"]
+[ext_resource type="Texture2D" uid="uid://dm2yenc6ni3j8" path="res://assets/Coin-3.png.png" id="4_wo727"]
+[ext_resource type="Texture2D" uid="uid://n640c3un5aqm" path="res://assets/Coin-4.png.png" id="5_n5t0p"]
+[ext_resource type="Texture2D" uid="uid://cofiq4rg366v4" path="res://assets/Coin-5.png.png" id="6_wk6ts"]
+[ext_resource type="Texture2D" uid="uid://baekpuiut5nk3" path="res://assets/Coin-6.png.png" id="7_fr64j"]
+[ext_resource type="Texture2D" uid="uid://ddrnkjwffwqrx" path="res://assets/Coin-7.png.png" id="8_4bbdn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6wru6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wh8iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ujy84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wo727")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n5t0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wk6ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fr64j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4bbdn")
+}],
+"loop": true,
+"name": &"coint",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klksn"]
+radius = 12.0416
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(-2, 0)
+collision_layer = 15
+script = ExtResource("1_dljhw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 3)
+scale = Vector2(0.0468749, 0.0512499)
+sprite_frames = SubResource("SpriteFrames_6wru6")
+animation = &"coint"
+frame = 1
+frame_progress = 0.334332
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 3)
+shape = SubResource("CircleShape2D_klksn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

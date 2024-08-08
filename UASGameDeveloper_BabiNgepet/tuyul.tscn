@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://c1a84skt7bf0k"]
+
+[ext_resource type="Script" path="res://tuyul.gd" id="1_641ju"]
+[ext_resource type="Texture2D" uid="uid://dvexe0sqpdc56" path="res://assets/tuyul.png" id="1_xchxf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsny0"]
+atlas = ExtResource("1_xchxf")
+region = Rect2(104, 182, 104, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xihqt"]
+atlas = ExtResource("1_xchxf")
+region = Rect2(208, 182, 104, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jocqt"]
+atlas = ExtResource("1_xchxf")
+region = Rect2(312, 182, 104, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwtym"]
+atlas = ExtResource("1_xchxf")
+region = Rect2(416, 182, 104, 91)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jj07r"]
+atlas = ExtResource("1_xchxf")
+region = Rect2(520, 182, 104, 91)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fw1nd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsny0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xihqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jocqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwtym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jj07r")
+}],
+"loop": true,
+"name": &"stay_tuyul",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6sc3"]
+size = Vector2(30.875, 10)
+
+[node name="Tuyul" type="CharacterBody2D"]
+script = ExtResource("1_641ju")
+
+[node name="CharacterBody2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(649, 335)
+scale = Vector2(0.586538, 0.576923)
+sprite_frames = SubResource("SpriteFrames_fw1nd")
+animation = &"stay_tuyul"
+frame = 4
+frame_progress = 0.772287
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(649, 359)
+shape = SubResource("RectangleShape2D_r6sc3")

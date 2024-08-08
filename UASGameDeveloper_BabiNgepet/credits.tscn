@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://btkt26ympm7r2"]
+
+[ext_resource type="Script" path="res://credit.gd" id="1_7a85b"]
+[ext_resource type="Texture2D" uid="uid://c1o5nqkohjep7" path="res://assets/Credit.png" id="1_yt5u4"]
+[ext_resource type="AudioStream" uid="uid://dp1ou4g5b1e1h" path="res://assets/SoundMain.mp3" id="3_xir52"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7a85b")
+
+[node name="home" type="Button" parent="."]
+offset_left = 938.0
+offset_top = 551.0
+offset_right = 1123.0
+offset_bottom = 602.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(574, 323.5)
+scale = Vector2(0.638542, 0.691667)
+texture = ExtResource("1_yt5u4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xir52")
+volume_db = -23.807
+autoplay = true
+
+[connection signal="button_up" from="home" to="." method="_on_home_button_up"]

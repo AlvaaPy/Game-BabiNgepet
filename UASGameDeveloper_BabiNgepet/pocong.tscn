@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bo5eohvm0mxqx"]
+
+[ext_resource type="Texture2D" uid="uid://bj0ceynujtmo2" path="res://assets/pocong.png" id="1_2rme3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d45qa"]
+atlas = ExtResource("1_2rme3")
+region = Rect2(97, 122, 97, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn5m3"]
+atlas = ExtResource("1_2rme3")
+region = Rect2(194, 122, 97, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkwne"]
+atlas = ExtResource("1_2rme3")
+region = Rect2(291, 122, 97, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyws0"]
+atlas = ExtResource("1_2rme3")
+region = Rect2(388, 122, 97, 122)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2gig"]
+atlas = ExtResource("1_2rme3")
+region = Rect2(485, 122, 97, 122)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6gfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d45qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn5m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkwne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyws0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2gig")
+}],
+"loop": true,
+"name": &"stay_pocong",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ilyg"]
+size = Vector2(21, 9)
+
+[node name="pocong" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(730, 304)
+scale = Vector2(0.729381, 0.594262)
+sprite_frames = SubResource("SpriteFrames_f6gfa")
+animation = &"stay_pocong"
+frame_progress = 0.443513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(737, 333)
+shape = SubResource("RectangleShape2D_8ilyg")
